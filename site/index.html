@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.html">
+    <title>My CV</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="img8x">
+          <div class="box">
+            <img src="imagem.jpg" alt="" />
+          </div>
+        </div>
+        <div class="profileText">
+          <h3 id="nome">João Ralha<br /><span id="profissao">Estudante</span></h3>
+          
+          <button><a href="login.html">Login</a></button>
+          <button id="logout"><ion-icon name="exit-outline"></ion-icon></button>
+        </div>
+      </div>
+      <div class="contentBox">
+        <div class="leftSide">
+          <h3>Contacto</h3>
+          <ul>
+            <li>
+              <span class="icon"
+                ><ion-icon name="call-outline"></ion-icon
+              ></span>
+              <span class="text">(+351) 932 646 435</span>
+            </li>
+            <li>
+              <span class="icon"
+                ><ion-icon name="mail-outline"></ion-icon
+              ></span>
+              <span class="text" id="email">jppralha@gmail.com</span>
+            </li>
+            <li>
+              <span class="icon"><ion-icon name="logo-github"></ion-icon></span>
+              <span class="text">github.com/JoaoRalha7</span>
+            </li>
+            <li>
+              <span class="icon"
+                ><ion-icon name="location-outline"></ion-icon
+              ></span>
+              <span class="text" id="localidade">Lama, Barcelos</span>
+            </li>
+          </ul>
+          <h3>Educação</h3>
+          <button id="addEducationButton" class="button-style">Adicionar Educação</button>
+          <form id="educationForm" style="display: none;">
+            <input type="text" id="startDateInput" placeholder="Data de Início" required>
+            <input type="text" id="endDateInput" placeholder="Data de Fim" required>
+            <input type="text" id="degreeInput" placeholder="Grau" required>
+            <input type="text" id="institutionInput" placeholder="Instituição" required>
+            <button type="submit">Adicionar</button>
+          </form>
+          
+        
+          <ul id="education-list"></ul>
+          <ul class="educacao">
+            <li>
+              <h5></h5>
+              <h4></h4>
+              <h6></h6>
+            </li>
+            <li>
+              <h5</h5>
+              <h4>
+                
+              </h4>
+              <h6></h6>
+            </li>
+         
+          </ul>
+
+          <h3>Idioma</h3>
+          <button id="addLanguageButton" class="button-style">Adicionar Idioma</button>
+          <!-- Botão DELETE -->
+          <button id="deleteLanguageButton" class="button-styleD">Delete</button>
+
+          <div id="deleteModal" class="modal">
+            <div class="modal-content">
+              <h3>Selecione o idioma para excluir:</h3>
+              <select id="languageSelect"></select>
+              <button id="confirmDeleteButton">Confirmar</button>
+              <button id="cancelDeleteButton">Cancelar</button>
+            </div>
+          </div>
+
+
+            <form id="languageForm" style="display: none;">
+              <input type="text" id="languageInput" placeholder="Idioma" required>
+              <input type="text" id="proficiencyInput" placeholder="Nível de Proficiência" required>
+              <button type="submit">Adicionar</button>
+            </form>
+          <ul class="idioma" >
+            <li>
+              <span class="texto"></span>
+              <span class="percent">
+                <div></div>
+              </span>
+            </li>
+            <li>
+                <span class="texto"></span>
+                <span class="percent">
+                  <div></div>
+                </span>
+              </li>
+          </ul>
+          <h3>Interesse</h3>
+          <ul class="interest">
+            <li><span class="icon"><ion-icon name="code-outline"></ion-icon></span>Programação</li>
+            <li><span class="icon"><ion-icon name="globe-outline"></ion-icon></span>IoT</li>
+            <li><span class="icon"><ion-icon name="document-lock-outline"></ion-icon></span>Cibersegurança</li>
+            <li><span class="icon"><ion-icon name="game-controller-outline"></ion-icon></span>Gaming</li>
+          </ul>
+        </div>
+        
+        <div class="rightSide">
+
+          <div class="info">
+            <h3>Perfil</h3>
+            <p id="description">
+              Sou estudante de Engenharia de Redes e Sistemas de Computadores no Instituto Politécnico de Viana de Castelo.
+              <br>
+              Sou uma pessoa persistente e criativa, tento focar-me a mim próprio e gosto de trabalhar em grupo em torno de um objetivo, até alcançar o mesmo. Tenho como objetivo seguir a minha licenciatura a nível profissional.
+            </p>
+          </div>
+          
+          <div class="infoE">
+            <h3>Experiência</h3>
+            <div class="box">
+              <div class="ano_empresa">
+                <h5>2014 - 2016</h5>
+                <h5>Company Name</h5>
+              </div>
+              <div class="text">
+                <h4>Senior Rei</h4>
+                <p>Lorem Chupa aqui</p>
+              </div>
+            </div>
+            <div class="box">
+              <div class="ano_empresa">
+                <h5>2017 - 2020</h5>
+                <h5>Company Name</h5>
+              </div>
+              <div class="text">
+                <h4>Senior Rei</h4>
+                <p>Lorem asdsadsadiokpsjadushiadgyuiadgi</p>
+              </div>
+            </div>
+          </div>
+          <div class="skills">
+            <h3>Skills</h3>
+            <div class="box">
+              <h4>HTML</h4>
+              <span class="percent">
+                <div style="width: 71%"></div>
+                <button class="editButton"></button>
+              </span>
+            </div>
+          </div>
+          
+          <button id="addSkillButton" class="addSkillButton">Adicionar Skill</button>
+
+          
+          <!-- Modal - Editar Skill -->
+          <div id="editModal" class="modal">
+            <div class="modal-content">
+              <h3>Ajustar a percentagem:</h3>
+              <input type="range" id="percentRange" min="0" max="100" step="1">
+              <span id="percentValue">0%</span>
+              <button id="saveButton">Salvar</button>
+              <button id="cancelButton">Cancelar</button>
+            </div>
+          </div>
+        
+          <div id="addSkillModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Adicionar Skill</h2>
+              <form id="addSkillForm">
+                <label for="skillName">Nome da Skill:</label>
+                <input type="text" id="skillName" required>
+                <label for="addSkillPercent">Percentagem:</label>
+                <input type="range" id="addSkillPercentRange" min="0" max="100" step="1">
+                <span id="addSkillPercentValue">0%</span>
+          
+                <button type="submit">Salvar</button>
+              </form>
+            </div>
+          </div>
+          
+          
+          <script>
+            // Função para remover o token da local storage e recarregar a página
+            function logout() {
+              localStorage.removeItem('token');
+              location.reload(); // Recarrega a página
+            }
+          
+            // Verifica se há um token na local storage
+            var token = localStorage.getItem('token');
+            if (!token) {
+              var logoutButton = document.getElementById('logout');
+              logoutButton.style.display = 'none'; // Oculta o botão de logout
+            } else {
+              var logoutButton = document.getElementById('logout');
+              logoutButton.addEventListener('click', logout);
+            }
+          </script>
+          
+          
+          
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
+

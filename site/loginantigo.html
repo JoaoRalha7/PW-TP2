@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="login.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
+  </head>
+  <body>
+    <section>
+      <div class="form-box">
+        <div class="form-value">
+          <form action="">
+            <h2>Login</h2>
+            <div class="inputbox">
+              <ion-icon name="person-outline"></ion-icon>
+              <input type="username" id="username" name="username" required />
+              <label for="">Username</label>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="key-outline"></ion-icon>
+              <input type="password" id="password" name="password" required />
+              <label for="">Password</label>
+            </div>
+            <div class="remember">
+              <label for=""><input type="checkbox" />Remember Me</label>
+            </div>
+              <button  onclick="login()">Login</button>
+              <button  onclick="getTodo()">Get Todo</button>
+          </form>
+          <div>
+            <button><a href="index.html">Guest</a></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Replace with your login endpoint URL
+        const url = "http://localhost:4242/api/user/login";
+
+        const requestBody = { username, password };
+
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            localStorage.setItem("token-iusabndkjanbksd", data.token);
+
+            // Handle login response
+            document.getElementById("loginResult").innerHTML =
+              JSON.stringify(data);
+            window.location.href = "index.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
